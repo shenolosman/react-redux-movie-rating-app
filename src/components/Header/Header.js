@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MovieListing = () => {
+const Header = () => {
     return (
         <div>
-            listing
+            header
         </div>
     );
 }
 
-export default MovieListing;
+export default Header;
