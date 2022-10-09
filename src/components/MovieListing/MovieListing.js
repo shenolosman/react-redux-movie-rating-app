@@ -7,6 +7,7 @@ const MovieListing = () => {
   const movies = useSelector(getAllMovies);
   console.log("movies_:", movies);
   let renderMovies = "";
+  console.log("movies.Response:",movies.Response);
 
   renderMovies =
     movies.Response === "True" ? (
