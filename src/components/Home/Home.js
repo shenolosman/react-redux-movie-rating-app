@@ -14,11 +14,12 @@ const Home = () => {
       const response = await movieApi.get(`?apiKey=${APIKey}&s=${movieText}&type=movie`).catch((e) => {
         console.log("Error:",e);
       });
-      // console.log("Response from api:",response);
+      // console.log("Response from api:",response.data);
       dispatch(addMovies(response.data))
+      // console.log("addMovies(response.data) :",addMovies(response.data));
     };
       fetchMovies();
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       <div className="banner-img"> </div>
