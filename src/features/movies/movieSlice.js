@@ -1,16 +1,20 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import movieApi from "../../common/apis/movieApi";
 import { APIKey } from "../../common/apis/MovieApiKey";
+
 export const fetchAsyncMovies = createAsyncThunk("movies/fetchAsyncMovies", async () => {
   const movieText = "Harry";
   const response = await movieApi.get(`?apiKey=${APIKey}&s=${movieText}&type=movie`);
-  // console.log("Response from api:",response.data);
   return response.data;
-  // console.log("addMovies(response.data) :",addMovies(response.data));
+});
+export const fetchAsyncSeries = createAsyncThunk("movies/fetchAsyncSeries", async () => {
+  const movieText = "Friends";
+  const response = await movieApi.get(`?apiKey=${APIKey}&s=${movieText}&type=series`);
+  return response.data;
 });
 const initialState = {
   movies: {},
-//   fetchAsyncMovies: {},
+  shows: {},
 };
 
 const movieSlice = createSlice({
@@ -27,15 +31,21 @@ const movieSlice = createSlice({
     },
     [fetchAsyncMovies.fulfilled]: (state, { payload }) => {
       console.log("fetched successfully");
-      console.log("payload: ",payload);
+      console.log("payload: ", payload);
       return { ...state, movies: payload };
     },
     [fetchAsyncMovies.rejected]: () => {
       console.log("rejected");
+    },
+    [fetchAsyncSeries.fulfilled]: (state, { payload }) => {
+      console.log("fetched successfully");
+      console.log("payload: ", payload);
+      return { ...state, shows: payload };
     },
   },
 });
 
 export const { addMovies } = movieSlice.actions;
 export const getAllMovies = (state) => state.movies.movies;
+export const getAllShows = (state) => state.movies.shows;
 export default movieSlice.reducer;
