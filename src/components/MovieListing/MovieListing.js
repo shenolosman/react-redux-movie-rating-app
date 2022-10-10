@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { getAllMovies, getAllShows } from "../../features/movies/movieSlice";
 import MovieCard from "../MovieCard/MovieCard";
 import "./MovieListing.scss";
+// import Slider  from "react-slick";
+
 const MovieListing = () => {
   const movies = useSelector(getAllMovies);
   const shows = useSelector(getAllShows);
@@ -25,11 +27,24 @@ const MovieListing = () => {
         <h3>{shows.Error}</h3>
       </div>
     );
+
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 6,
+  //   slidesToScroll: 3,
+  // };
+
   return (
     <div className="movie-wrapper">
       <div className="movie-list">
         <h2>Movies</h2>
-        <div className="movie-container">{renderMovies}</div>
+        <div className="movie-container">
+           {/* <Slider {...settings}> */}
+                {renderMovies}
+                {/* </Slider> */}
+    </div>
       </div>
       <div className="show-list">
         <h2>Shows</h2>
