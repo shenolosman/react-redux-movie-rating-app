@@ -1,7 +1,7 @@
 @use "../../common/colors.scss";
 
 .header {
-  background-color:#1a242f;
+  background-color: #1a242f;
   height: 72px;
   padding: 0px 40px;
   display: flex;
@@ -9,7 +9,7 @@
   justify-content: space-between;
 }
 .logo {
-  color:#ffffff;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 600;
 }
@@ -17,4 +17,28 @@
 .user-image img {
   width: 38px;
   height: 38px;
+}
+.search {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  form {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    button {
+      padding: 0 8px;
+      font-size: 20px;
+      cursor: pointer;
+      height: 38px;
+    }
+  }
+
+  input {
+    font-size: 18px;
+    width: 100%;
+    padding: 5px 5px 5px 10px;
+    height: 38px;
+    outline: none;
+  }
 }

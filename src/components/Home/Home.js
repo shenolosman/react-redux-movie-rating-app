@@ -4,10 +4,12 @@ import "./Home.scss";
 import { useDispatch } from "react-redux";
 import { fetchAsyncMovies,fetchAsyncSeries } from "../../features/movies/movieSlice";
 const Home = () => {
+  const movieText="Harry";
+  const showText="Friends"
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAsyncMovies());
-    dispatch(fetchAsyncSeries());
+    dispatch(fetchAsyncMovies(movieText));
+    dispatch(fetchAsyncSeries(showText));
   }, [dispatch]);
   return (
     <div>
