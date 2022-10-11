@@ -6,12 +6,12 @@
     font-weight: 400;
   }
 }
-.movie-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-gap: 15px;
-// justify-content: space-between;
-}
+// .movie-container {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+//   grid-gap: 15px;
+// // justify-content: space-between;
+// }
 .show-list{
 margin-bottom: 20px;
 }
